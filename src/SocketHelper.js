@@ -29,6 +29,7 @@ class SocketHelper {
         socket.on('getAllData', this.mSocket.emitAllData)
         socket.on('sendmsg', this.mSocket.onSendMsg)
         socket.on('disconnect', this.mSocket.onDisconnect)
+        socket.on('typing', this.mSocket.onTyping)
     }
 }
 module.exports = SocketHelper

@@ -19,5 +19,8 @@ class ProcessData {
     emitAllData = () => {
         this.socket.emit("allData", dataMsg)
     }
+    onTyping = (name) => {
+        this.socket.emit("isTyping", dataUser)
+    }
 }
 module.exports = ProcessData
