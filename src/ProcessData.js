@@ -20,7 +20,7 @@ class ProcessData {
         this.socket.emit("allData", dataMsg)
     }
     onTyping = (name) => {
-        this.socket.emit("isTyping", dataUser)
+        this.socket.emit("isTyping", name)
     }
 }
 module.exports = ProcessData
