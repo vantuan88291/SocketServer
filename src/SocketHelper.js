@@ -8,7 +8,7 @@ class SocketHelper {
         this.configSocket()
         this.showConnectFromWeb()
         this.io.on('connection', this.listener)
-
+        this.mSocket.setSocket(this.io)
     }
     configSocket = () => {
         this.mSocket = new ProcessData()
@@ -25,8 +25,8 @@ class SocketHelper {
         });
     }
     listener = (socket) => {
-        this.mSocket.setSocket(socket)
-        socket.on('initUser', this.mSocket.addUser)
+        console.log('new user join')
+        socket.on('getAllData', this.mSocket.emitAllData)
         socket.on('sendmsg', this.mSocket.onSendMsg)
         socket.on('disconnect', this.mSocket.onDisconnect)
     }
